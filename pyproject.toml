@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "shieldml-lab"
+version = "0.1.0"
+description = "Reproducible ML artifact protection and inference-integrity security lab"
+requires-python = ">=3.10"
+dependencies = ["cryptography>=42"]
+[project.optional-dependencies]
+test = ["pytest>=8"]
+robustness = ["torch>=2.2"]
+[project.scripts]
+shieldml = "shieldml.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
